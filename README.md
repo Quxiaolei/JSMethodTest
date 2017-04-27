@@ -250,6 +250,12 @@ webView的层级结构为:`webView`-> `webScrollView`-> `UIWebBrowserView`,最�
 
 在`WKWebView`末尾增加一个View,只能在webView加载完成后,给webView页面底部增加一对空白的`div`,再将空白View加在空白`div`位置.参见:[WKWebView使用及注意点(keng)](http://www.jianshu.com/p/9513d101e582)
 
+[WKWeb​View](http://nshipster.cn/wkwebkit/)
+
+[iOS 8 WebKit框架概览（上）](http://www.cocoachina.com/ios/20150203/11089.html)
+
+[iOS 8 WebKit框架概览（下）](http://www.cocoachina.com/ios/20150205/11108.html)
+
 #### `WKWebView`的JS交互方式:
 
 使用`WKWebView`时,需要手动导入`#import <WebKit/WebKit.h>`
@@ -268,6 +274,20 @@ webView的层级结构为:`webView`-> `webScrollView`-> `UIWebBrowserView`,最�
     [webViewConfig.userContentController addScriptMessageHandler:self name:@"webViewApp"];
 }
 
+#pragma mark - WKUIDelegate
+//获取OC原生调用的JS alert方法
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    completionHandler();
+    NSLog(@"WKWebView中OC调用JS方法:%@",message);
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"title" message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:alertController animated:YES completion:^{
+    }];
+}
+
 #pragma mark - WKScriptMessageHandler
 //接收网页消息的回调方法
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -284,7 +304,7 @@ webView的层级结构为:`webView`-> `webScrollView`-> `UIWebBrowserView`,最�
 }
 
 ```
-在APP中给JS发送消息
+在APP中模拟JS发送消息
 ```objective-c
 NSString *str = @"{'method' : 'showAlert','message' : 'wkWebView',}";
 //window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
