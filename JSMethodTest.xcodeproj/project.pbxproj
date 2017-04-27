@@ -13,6 +13,9 @@
 		2512C1591EADE9690041B3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2512C1571EADE9690041B3E4 /* Main.storyboard */; };
 		2512C15B1EADE9690041B3E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2512C15A1EADE9690041B3E4 /* Assets.xcassets */; };
 		2512C15E1EADE9690041B3E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2512C15C1EADE9690041B3E4 /* LaunchScreen.storyboard */; };
+		2512C1681EADEABC0041B3E4 /* test1.html in Resources */ = {isa = PBXBuildFile; fileRef = 2512C1671EADEABC0041B3E4 /* test1.html */; };
+		2512C16A1EADEB3C0041B3E4 /* test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 2512C1691EADEB3C0041B3E4 /* test2.html */; };
+		25F850A21EB06C5000787899 /* TestJSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F850A11EB06C5000787899 /* TestJSObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		2512C15A1EADE9690041B3E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2512C15D1EADE9690041B3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2512C15F1EADE9690041B3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2512C1671EADEABC0041B3E4 /* test1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test1.html; sourceTree = "<group>"; };
+		2512C1691EADEB3C0041B3E4 /* test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test2.html; sourceTree = "<group>"; };
+		25F850A01EB06C5000787899 /* TestJSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestJSObject.h; sourceTree = "<group>"; };
+		25F850A11EB06C5000787899 /* TestJSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJSObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +69,13 @@
 				2512C1521EADE9690041B3E4 /* AppDelegate.m */,
 				2512C1541EADE9690041B3E4 /* ViewController.h */,
 				2512C1551EADE9690041B3E4 /* ViewController.m */,
+				25F850A01EB06C5000787899 /* TestJSObject.h */,
+				25F850A11EB06C5000787899 /* TestJSObject.m */,
 				2512C1571EADE9690041B3E4 /* Main.storyboard */,
 				2512C15A1EADE9690041B3E4 /* Assets.xcassets */,
 				2512C15C1EADE9690041B3E4 /* LaunchScreen.storyboard */,
 				2512C15F1EADE9690041B3E4 /* Info.plist */,
+				2512C1661EADEAAE0041B3E4 /* Resource */,
 				2512C14E1EADE9690041B3E4 /* Supporting Files */,
 			);
 			path = JSMethodTest;
@@ -77,6 +87,15 @@
 				2512C14F1EADE9690041B3E4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2512C1661EADEAAE0041B3E4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2512C1671EADEABC0041B3E4 /* test1.html */,
+				2512C1691EADEB3C0041B3E4 /* test2.html */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2512C15E1EADE9690041B3E4 /* LaunchScreen.storyboard in Resources */,
+				2512C16A1EADEB3C0041B3E4 /* test2.html in Resources */,
 				2512C15B1EADE9690041B3E4 /* Assets.xcassets in Resources */,
 				2512C1591EADE9690041B3E4 /* Main.storyboard in Resources */,
+				2512C1681EADEABC0041B3E4 /* test1.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2512C1561EADE9690041B3E4 /* ViewController.m in Sources */,
+				25F850A21EB06C5000787899 /* TestJSObject.m in Sources */,
 				2512C1531EADE9690041B3E4 /* AppDelegate.m in Sources */,
 				2512C1501EADE9690041B3E4 /* main.m in Sources */,
 			);
@@ -272,10 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JSMethodTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSMethodTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -283,10 +308,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JSMethodTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSMethodTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -309,6 +337,7 @@
 				2512C1641EADE9690041B3E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
